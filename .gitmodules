@@ -1,0 +1,6 @@
+[submodule ".references/sharp"]
+	path = .references/sharp
+	url = https://github.com/lovell/sharp.git
+[submodule ".references/andrew6rant"]
+	path = .references/andrew6rant
+	url = https://github.com/Andrew6rant/Andrew6rant.git

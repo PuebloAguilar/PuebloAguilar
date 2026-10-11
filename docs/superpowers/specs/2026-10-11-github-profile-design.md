@@ -1,15 +1,25 @@
 # Pueblo Aguilar GitHub profile
 
-The user selected Andrew6rant's terminal profile layout and approved hourly automatic AI metric updates. Create the public profile repository PuebloAguilar/PuebloAguilar; the authenticated account matches the intended owner, and no existing profile repository exists.
+Publish the terminal profile in the public profile repository `PuebloAguilar/PuebloAguilar`. The user selected the layout inspired by Andrew6rant and approved automatic hourly updates using existing public AI metrics.
 
-Use the user's existing GitHub avatar to generate an ASCII portrait. Pair it with a monospaced, two-column terminal panel with orange field names, blue values, muted dotted leaders, identity, projects and public contact links. Replace GitHub statistics with lifetime and seven-day AI usage: tokens, messages, distinct sessions, tool calls and active days. Show the original collection timestamp in America/Sao_Paulo. Tokens include recorded cache usage; messages and sessions include recorded subagents. Do not describe API-equivalent costs as actual spending; omit costs from this compact panel.
+## Approved visual
 
-Use SVG images through a GitHub README picture element, with dark/light and narrow-screen variants. The portrait and panel are repository-native vector output, not a social post or final raster cover.
+Use style 02, grayscale, at 50 columns and 30 rows, selected from the local resolution previews on 2026-10-11. Preserve the entire original square GitHub avatar, including its background; do not crop it or apply a silhouette mask. Character placement compensates for monospace proportions so the rendered photo area remains exactly square. The desktop photo occupies 408×408 pixels, with 13.6-pixel glyphs and 8.16-pixel advances. Dark-theme glyphs, positions and grayscale values match the approved preview exactly.
 
-Fetch only the already-public aggregate feeds at https://www.puebloaguilar.com/api/ai-usage and https://soceo.ai/data/pueblo-ai-usage.json. The first currently returns 503; the SOCEO feed is fresh and available. Validate owner, schema, timestamps and counters. Prefer the newest valid collection, preserve a valid cached snapshot on temporary failures, and never replace newer data with older data. Store only a minimal allowlist of public counters, never prompts, session identifiers, project names or private paths. Do not access or export credentials.
+The panel pairs the ASCII portrait with identity, projects, public contact links and AI usage. Use orange keys, blue values and muted dotted leaders. Provide desktop dark/light and vertically arranged narrow-screen variants through a README picture element. Keep the portrait's dark square background in the light theme so the approved grayscale image stays recognizable. All final images are script-free, text-based SVGs; no bitmap portrait is embedded.
 
-Research alternatives before implementation: lowlighter/metrics (MIT) is maintained but requires custom plugins for these non-GitHub counters; Andrew6rant has no declared source license, so use it as a visual reference only; sharp (Apache-2.0, Node >=20.9) is actively maintained and handles avatar sampling without implementing a decoder. Adopt sharp through npm and pin consultation references as submodules outside the build. Implement the small SVG/data adapter locally because it matches the selected visual and reuses the existing public source.
+## Public data and meaning
 
-An hourly GitHub Actions workflow runs tests, updates the images and commits only public generated artifacts when changed. It has contents-write permission and uses the ephemeral built-in GITHUB_TOKEN. Schedule at minute 17 to avoid the top-of-hour queue; actual scheduler time can vary. Verify an explicit workflow run. If GitHub execution is unavailable, provide an operational local hourly publisher using existing gh authentication, isolated from other collectors.
+Fetch only `https://www.puebloaguilar.com/api/ai-usage` and `https://soceo.ai/data/pueblo-ai-usage.json`. Validate owner, schema, collection timestamp, date ranges and nonnegative safe-integer counters. Publish an allowlisted summary with lifetime and seven-day totals. Select the newest valid source or cached snapshot without timestamp regression; temporary upstream failures preserve the previous collection.
 
-Acceptance: correct owner; recognizable avatar portrait; no clipped desktop or mobile text; dark/light variants; live counters match one source timestamp; newer collections win; temporary failure preserves counters and labels last collection accurately; update automation is enabled and a real execution is observed. Publish only this new profile repository, leaving the user's other repositories and existing collectors unchanged.
+Display tokens, input/output/cache tokens, messages, distinct sessions, tool calls and active days. Tokens include recorded cache usage; activity includes recorded subagents. Omit monetary cost estimates. Show the original source timestamp in America/Sao_Paulo and the recorded lifetime date range. No local prompts, session records, file paths or credentials are collected.
+
+## Automation and dependencies
+
+A GitHub Actions workflow runs at minute 17 of every hour and supports manual dispatch. Node 24 runs npm ci, counter-validation tests and the updater, then commits only the generated README, SVGs and public counter summary. Use the ephemeral GITHUB_TOKEN with repository contents write permission. GitHub may delay scheduled jobs; the original collection time remains visible.
+
+Use npm sharp for image decoding and ASCII sampling. Pin consultation submodules under `.references/`; keep them outside the build. The small custom renderer is justified by the existing public aggregate schema and exact selected visual. The Andrew6rant repository is a visual reference without a declared source license, so its source or SVGs are not copied.
+
+## Verification
+
+Before publication: counter validation and failure-fallback tests, exact comparison against the approved ASCII portrait, SVG XML parsing, square character geometry, dark/light and narrow-screen visual inspection, and staged-path review. After publication: confirm the profile README and raw SVGs load publicly, then observe a successful manual Actions run that refreshes and publishes the panel. Configuration alone does not prove execution.

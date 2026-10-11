@@ -15,7 +15,7 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
   const theme=dark?{bg:'#161b22',fg:'#c9d1d9',key:'#9c6bff',value:'#a5d6ff',muted:'#758396',accent:'#3fb950'}:{bg:'#f6f8fa',fg:'#24292f',key:'#7839ee',value:'#0550ae',muted:'#6e7781',accent:'#1a7f37'};
   const symbolOnly=part==='symbol',metricsOnly=part==='metrics';
   const width=symbolOnly?448:metricsOnly?(mobile?560:756):mobile?700:1180;
-  let height=symbolOnly?448:metricsOnly?638:mobile?1200:638;
+  let height=symbolOnly?448:metricsOnly?600:mobile?1140:600;
   const textX=metricsOnly?26:mobile?26:450;
   const textY=metricsOnly?38:mobile?580:38;
   const textWidth=width-textX-28;
@@ -70,11 +70,9 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
     pair(19,'Messages',number(all.messages),'Active days',number(all.activeDays)),
     pair(20,'Tokens.7d',compact(week.totalTokens),'Messages.7d',number(week.messages)),
     line(22,'Collected',collectionTime(usage.updatedAt)),
-    text(textX,textY+(23+extraRows)*rowHeight,'Tokens include cache. Activity includes subagents.',theme.muted,13),
-    text(textX,textY+(24+extraRows)*rowHeight,`Lifetime: ${all.startDate} → ${all.endDate} · refreshed hourly`,theme.muted,12.5),
   ];
   const content=(symbolOnly?portrait:metricsOnly?metrics:[...portrait,...metrics]).join('\n');
-  if(metricsOnly&&mobile)height=textY+(25+extraRows)*rowHeight+24;
+  if(metricsOnly&&mobile)height=textY+(23+extraRows)*rowHeight+24;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">\n<title id="title">Pueblo Aguilar — profile and AI usage</title>\n<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: ${all.totalTokens} tokens, ${all.messages} messages, ${all.sessions} sessions. Collected ${escapeXml(collectionTime(usage.updatedAt))}.</desc>\n<rect width="${width}" height="${height}" rx="15" fill="${symbolOnly?'#161b22':theme.bg}"/>\n<g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="${fontSize}" xml:space="preserve">\n${content}\n</g>\n</svg>\n`;
 }
 
@@ -97,5 +95,5 @@ export function renderReadme(usage) {
       ${picture('metrics',`Pueblo Aguilar — Founder & CMO, building SOCEO and Houtines. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`,756,{mobile:true})}
     </td>
   </tr>
-</table>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n\n<details>\n<summary>About the AI metrics</summary>\n\nThese are recorded usage totals, including cache tokens and subagent activity. Sessions are distinct recorded sessions, not sums of daily counts. The panel shows lifetime totals from **${all.startDate} to ${all.endDate}**, plus the last seven days.\n\nThe collection timestamp comes from the source data. An hourly refresh keeps the latest valid snapshot; temporary source failures preserve the last collection. The hourly publisher runs while its host Mac is awake. The checked-in GitHub Actions template can be enabled when workflow access is available.\n\nPublic sources: [Pueblo's AI usage](https://www.puebloaguilar.com/api/ai-usage) and [SOCEO's shared snapshot](https://soceo.ai/data/pueblo-ai-usage.json). Only aggregate counters are stored in this repository.\n\nVisual direction: [Andrew6rant's profile](https://github.com/Andrew6rant). Original SVG implementation; see [.references/README.md](.references/README.md) for research and licenses.\n\n</details>\n`;
+</table>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n`;
 }

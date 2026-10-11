@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="872" viewBox="0 0 560 872" role="img" aria-labelledby="title description">
+<title id="title">Pueblo Aguilar — profile and AI usage</title>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29697658617 tokens, 258236 messages, 4257 sessions. Collected 11 Oct 2026 20:48 BRT.</desc>
+<rect width="560" height="872" rx="15" fill="#161b22"/>
+<g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="20" xml:space="preserve">
+<text x="26" y="38" fill="#c9d1d9" font-size="20">pueblo@aguilar ───────────────────────────</text>
+<text x="26" y="68"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">OS</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............................. </tspan><tspan fill="#a5d6ff">macOS</tspan></text>
+<text x="26" y="98"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Role</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................... </tspan><tspan fill="#a5d6ff">Founder &amp; CMO</tspan></text>
+<text x="26" y="128"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Building</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............. </tspan><tspan fill="#a5d6ff">SOCEO, Houtines</tspan></text>
+<text x="26" y="158"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Focus</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">AI agents, autonomous systems</tspan></text>
+<text x="26" y="188"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Stack</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...... </tspan><tspan fill="#a5d6ff">TypeScript, Python, React</tspan></text>
+<text x="26" y="248"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Agents</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .... </tspan><tspan fill="#a5d6ff">Codex, Claude Code, Hermes</tspan></text>
+<text x="26" y="308" fill="#c9d1d9" font-size="20">- Contact ────────────────────────────────</text>
+<text x="26" y="338"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Website</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............ </tspan><tspan fill="#a5d6ff">puebloaguilar.com</tspan></text>
+<text x="26" y="368"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Instagram</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............. </tspan><tspan fill="#a5d6ff">@puebloaguilar</tspan></text>
+<text x="26" y="398"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................. </tspan><tspan fill="#a5d6ff">/in/opueblo</tspan></text>
+<text x="26" y="458" fill="#c9d1d9" font-size="20">- AI Usage ───────────────────────────────</text>
+<text x="26" y="488"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.All</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .................... </tspan><tspan fill="#a5d6ff">29.70B</tspan></text>
+<text x="26" y="518"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Input</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .... </tspan><tspan fill="#a5d6ff">635.32M  |  Output: 110.83M</tspan></text>
+<text x="26" y="548"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Cache</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ......................... </tspan><tspan fill="#a5d6ff">28.95B</tspan></text>
+<text x="26" y="578"><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="38" y="608" fill="#a5d6ff" font-size="20">4,257  |  Tool calls: 222,683</text>
+<text x="26" y="638"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">258,236  |  Active days: 75</tspan></text>
+<text x="26" y="668"><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="38" y="698" fill="#a5d6ff" font-size="20">6.71B  |  Messages.7d: 61,969</text>
+<text x="26" y="758"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...... </tspan><tspan fill="#a5d6ff">11 Oct 2026 20:48 BRT</tspan></text>
+<text x="26" y="788" fill="#758396" font-size="13">Tokens include cache. Activity includes subagents.</text>
+<text x="26" y="818" fill="#758396" font-size="12.5">Lifetime: 2026-03-08 → 2026-10-11 · refreshed hourly</text>
+</g>
+</svg>

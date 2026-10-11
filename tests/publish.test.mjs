@@ -14,9 +14,9 @@ async function fixture() {
   git('config','user.name','Publisher fixture'); git('config','user.email','fixture@example.invalid');
   for(const dir of ['scripts','assets','data'])await mkdir(join(repo,dir));
   await copyFile(new URL('../scripts/publish-profile.mjs',import.meta.url),join(repo,'scripts/publish-profile.mjs'));
-  await writeFile(join(repo,'scripts/update-profile.mjs'),"import{writeFileSync}from'node:fs';writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');");
+  await writeFile(join(repo,'scripts/update-profile.mjs'),"import{writeFileSync}from'node:fs';writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');writeFileSync('assets/profile-symbol-dark.svg','new symbol');");
   await writeFile(join(repo,'README.md'),'original'); await writeFile(join(repo,'data/usage.json'),'{}');
-  for(const name of ['dark','light','dark-mobile','light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
+  for(const name of ['dark','light','dark-mobile','light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
   git('add','.');git('commit','-m','fixture');git('remote','add','origin',remote);git('push','-u','origin','main');
   return {root,repo,remote,git,run:()=>spawnSync(process.execPath,['scripts/publish-profile.mjs'],{cwd:repo,encoding:'utf8'})};
 }
@@ -27,6 +27,7 @@ test('local publisher pushes the generated panel without untracked private files
     await writeFile(join(f.repo,'private-draft.txt'),'untracked work');
     const result=f.run(); assert.equal(result.status,0,result.stderr);
     assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:README.md'],{encoding:'utf8'}),'refreshed');
+    assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:assets/profile-symbol-dark.svg'],{encoding:'utf8'}),'new symbol');
     const paths=execFileSync('git',['--git-dir',f.remote,'ls-tree','--name-only','-r','main'],{encoding:'utf8'});
     assert(!paths.includes('private-draft.txt'));
   }finally{await rm(f.root,{recursive:true,force:true});}

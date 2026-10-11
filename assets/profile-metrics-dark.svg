@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="756" height="638" viewBox="0 0 756 638" role="img" aria-labelledby="title description">
+<title id="title">Pueblo Aguilar — profile and AI usage</title>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29697658617 tokens, 258236 messages, 4257 sessions. Collected 11 Oct 2026 20:48 BRT.</desc>
+<rect width="756" height="638" rx="15" fill="#161b22"/>
+<g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="16.5" xml:space="preserve">
+<text x="26" y="38" fill="#c9d1d9" font-size="16.5">pueblo@aguilar ───────────────────────────────────────────────────────</text>
+<text x="26" y="62"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">OS</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ......................................................... </tspan><tspan fill="#a5d6ff">macOS</tspan></text>
+<text x="26" y="86"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Role</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............................................... </tspan><tspan fill="#a5d6ff">Founder &amp; CMO</tspan></text>
+<text x="26" y="110"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Building</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ......................................... </tspan><tspan fill="#a5d6ff">SOCEO, Houtines</tspan></text>
+<text x="26" y="134"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Focus</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .............................. </tspan><tspan fill="#a5d6ff">AI agents, autonomous systems</tspan></text>
+<text x="26" y="158"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Stack</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .................................. </tspan><tspan fill="#a5d6ff">TypeScript, Python, React</tspan></text>
+<text x="26" y="206"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Agents</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................................ </tspan><tspan fill="#a5d6ff">Codex, Claude Code, Hermes</tspan></text>
+<text x="26" y="254" fill="#c9d1d9" font-size="16.5">- Contact ────────────────────────────────────────────────────────────</text>
+<text x="26" y="278"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Website</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................................ </tspan><tspan fill="#a5d6ff">puebloaguilar.com</tspan></text>
+<text x="26" y="302"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Instagram</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ......................................... </tspan><tspan fill="#a5d6ff">@puebloaguilar</tspan></text>
+<text x="26" y="326"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............................................. </tspan><tspan fill="#a5d6ff">/in/opueblo</tspan></text>
+<text x="26" y="374" fill="#c9d1d9" font-size="16.5">- AI Usage ───────────────────────────────────────────────────────────</text>
+<text x="26" y="398"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.All</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................................................ </tspan><tspan fill="#a5d6ff">29.70B</tspan></text>
+<text x="26" y="422"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Input</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................................ </tspan><tspan fill="#a5d6ff">635.32M  |  Output: 110.83M</tspan></text>
+<text x="26" y="446"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Cache</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ..................................................... </tspan><tspan fill="#a5d6ff">28.95B</tspan></text>
+<text x="26" y="470"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................... </tspan><tspan fill="#a5d6ff">4,257  |  Tool calls: 222,683</tspan></text>
+<text x="26" y="494"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............................. </tspan><tspan fill="#a5d6ff">258,236  |  Active days: 75</tspan></text>
+<text x="26" y="518"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .......................... </tspan><tspan fill="#a5d6ff">6.71B  |  Messages.7d: 61,969</tspan></text>
+<text x="26" y="566"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .................................. </tspan><tspan fill="#a5d6ff">11 Oct 2026 20:48 BRT</tspan></text>
+<text x="26" y="590" fill="#758396" font-size="13">Tokens include cache. Activity includes subagents.</text>
+<text x="26" y="614" fill="#758396" font-size="12.5">Lifetime: 2026-03-08 → 2026-10-11 · refreshed hourly</text>
+</g>
+</svg>

@@ -20,7 +20,7 @@
 
 These are recorded usage totals, including cache tokens and subagent activity. Sessions are distinct recorded sessions, not sums of daily counts. The panel shows lifetime totals from **2026-03-08 to 2026-10-11**, plus the last seven days.
 
-The collection timestamp comes from the source data. An hourly refresh keeps the latest valid snapshot; temporary source failures preserve the last collection. GitHub may delay scheduled runs.
+The collection timestamp comes from the source data. An hourly refresh keeps the latest valid snapshot; temporary source failures preserve the last collection. The hourly publisher runs while its host Mac is awake. The checked-in GitHub Actions template can be enabled when workflow access is available.
 
 Public sources: [Pueblo's AI usage](https://www.puebloaguilar.com/api/ai-usage) and [SOCEO's shared snapshot](https://soceo.ai/data/pueblo-ai-usage.json). Only aggregate counters are stored in this repository.
 

@@ -16,10 +16,10 @@ Display tokens, input/output/cache tokens, messages, distinct sessions, tool cal
 
 ## Automation and dependencies
 
-A GitHub Actions workflow runs at minute 17 of every hour and supports manual dispatch. Node 24 runs npm ci, counter-validation tests and the updater, then commits only the generated README, SVGs and public counter summary. Use the ephemeral GITHUB_TOKEN with repository contents write permission. GitHub may delay scheduled jobs; the original collection time remains visible.
+The current GitHub CLI credential permits repository writes but lacks the workflow scope. The working publication path is a macOS LaunchAgent at minute 17 of every hour using the existing authenticated Git credential. It runs while the Mac is awake, refuses to overwrite tracked work, uses an exclusive process lock, pulls with --ff-only, and commits only the generated README, SVGs and public counter summary. The original collection time remains visible. A GitHub Actions template supporting hourly schedule and manual dispatch is preserved at automation/profile.yml for a future move to hosted execution; it is not enabled.
 
 Use npm sharp for image decoding and ASCII sampling. Pin consultation submodules under `.references/`; keep them outside the build. The small custom renderer is justified by the existing public aggregate schema and exact selected visual. The Andrew6rant repository is a visual reference without a declared source license, so its source or SVGs are not copied.
 
 ## Verification
 
-Before publication: counter validation and failure-fallback tests, exact comparison against the approved ASCII portrait, SVG XML parsing, square character geometry, dark/light and narrow-screen visual inspection, and staged-path review. After publication: confirm the profile README and raw SVGs load publicly, then observe a successful manual Actions run that refreshes and publishes the panel. Configuration alone does not prove execution.
+Before publication: counter validation and failure-fallback tests, exact comparison against the approved ASCII portrait, SVG XML parsing, square character geometry, dark/light and narrow-screen visual inspection, and staged-path review. After publication: confirm the profile README and raw SVGs load publicly, then observe the registered LaunchAgent run successfully, verify its refreshed commit on GitHub, and confirm that the minute-17 hourly schedule is loaded. Configuration alone does not prove execution.

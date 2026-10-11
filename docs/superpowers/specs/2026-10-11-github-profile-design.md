@@ -1,0 +1,15 @@
+# Pueblo Aguilar GitHub profile
+
+The user selected Andrew6rant's terminal profile layout and approved hourly automatic AI metric updates. Create the public profile repository PuebloAguilar/PuebloAguilar; the authenticated account matches the intended owner, and no existing profile repository exists.
+
+Use the user's existing GitHub avatar to generate an ASCII portrait. Pair it with a monospaced, two-column terminal panel with orange field names, blue values, muted dotted leaders, identity, projects and public contact links. Replace GitHub statistics with lifetime and seven-day AI usage: tokens, messages, distinct sessions, tool calls and active days. Show the original collection timestamp in America/Sao_Paulo. Tokens include recorded cache usage; messages and sessions include recorded subagents. Do not describe API-equivalent costs as actual spending; omit costs from this compact panel.
+
+Use SVG images through a GitHub README picture element, with dark/light and narrow-screen variants. The portrait and panel are repository-native vector output, not a social post or final raster cover.
+
+Fetch only the already-public aggregate feeds at https://www.puebloaguilar.com/api/ai-usage and https://soceo.ai/data/pueblo-ai-usage.json. The first currently returns 503; the SOCEO feed is fresh and available. Validate owner, schema, timestamps and counters. Prefer the newest valid collection, preserve a valid cached snapshot on temporary failures, and never replace newer data with older data. Store only a minimal allowlist of public counters, never prompts, session identifiers, project names or private paths. Do not access or export credentials.
+
+Research alternatives before implementation: lowlighter/metrics (MIT) is maintained but requires custom plugins for these non-GitHub counters; Andrew6rant has no declared source license, so use it as a visual reference only; sharp (Apache-2.0, Node >=20.9) is actively maintained and handles avatar sampling without implementing a decoder. Adopt sharp through npm and pin consultation references as submodules outside the build. Implement the small SVG/data adapter locally because it matches the selected visual and reuses the existing public source.
+
+An hourly GitHub Actions workflow runs tests, updates the images and commits only public generated artifacts when changed. It has contents-write permission and uses the ephemeral built-in GITHUB_TOKEN. Schedule at minute 17 to avoid the top-of-hour queue; actual scheduler time can vary. Verify an explicit workflow run. If GitHub execution is unavailable, provide an operational local hourly publisher using existing gh authentication, isolated from other collectors.
+
+Acceptance: correct owner; recognizable avatar portrait; no clipped desktop or mobile text; dark/light variants; live counters match one source timestamp; newer collections win; temporary failure preserves counters and labels last collection accurately; update automation is enabled and a real execution is observed. Publish only this new profile repository, leaving the user's other repositories and existing collectors unchanged.

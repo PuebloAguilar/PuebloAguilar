@@ -93,11 +93,11 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
   return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">\n<title id="title">Pueblo Aguilar — profile and AI usage</title>\n<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: ${all.totalTokens} tokens, ${all.messages} messages, ${all.sessions} sessions. Collected ${escapeXml(collectionTime(usage.updatedAt))}.</desc>\n<rect width="${width}" height="${height}" rx="15" fill="${symbolOnly?'#161b22':theme.bg}"/>\n<g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="${fontSize}" xml:space="preserve">\n${content}\n</g>\n</svg>\n`;
 }
 
-export function renderReadme(usage) {
+export function renderReadme(usage,{assetBase='assets/'}={}) {
   const all=usage.all;
-  const picture=(prefix,alt,width,{mobile=false}={})=>`<picture>${mobile?`<source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="assets/profile-${prefix}-dark-mobile.svg"><source media="(max-width: 680px)" srcset="assets/profile-${prefix}-light-mobile.svg">`:''}
-    <source media="(prefers-color-scheme: dark)" srcset="assets/profile-${prefix}-dark.svg">
-    <img alt="${escapeXml(alt)}" src="assets/profile-${prefix}-light.svg" width="${width}">
+  const picture=(prefix,alt,width,{mobile=false}={})=>`<picture>${mobile?`<source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="${assetBase}profile-${prefix}-dark-mobile.svg"><source media="(max-width: 680px)" srcset="${assetBase}profile-${prefix}-light-mobile.svg">`:''}
+    <source media="(prefers-color-scheme: dark)" srcset="${assetBase}profile-${prefix}-dark.svg">
+    <img alt="${escapeXml(alt)}" src="${assetBase}profile-${prefix}-light.svg" width="${width}">
   </picture>`;
   return `<table width="100%">
   <tr>

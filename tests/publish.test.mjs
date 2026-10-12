@@ -14,7 +14,9 @@ async function fixture() {
   git('config','user.name','Publisher fixture'); git('config','user.email','fixture@example.invalid');
   for(const dir of ['scripts','assets','data'])await mkdir(join(repo,dir));
   await copyFile(new URL('../scripts/publish-profile.mjs',import.meta.url),join(repo,'scripts/publish-profile.mjs'));
-  await writeFile(join(repo,'scripts/update-profile.mjs'),"import{writeFileSync}from'node:fs';writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');writeFileSync('assets/profile-symbol-dark.svg','new symbol');");
+  await writeFile(join(repo,'scripts/update-profile.mjs'),`import{writeFileSync}from'node:fs';
+if(process.argv[2]==='--pin-readme')writeFileSync('README.md','refreshed\\n<img src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/'+process.argv[3]+'/assets/profile-symbol-dark.svg">');
+else{if(!process.argv.includes('--no-readme'))writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');writeFileSync('assets/profile-symbol-dark.svg','new symbol');}`);
   await writeFile(join(repo,'README.md'),'original'); await writeFile(join(repo,'data/usage.json'),'{}');
   for(const name of ['dark','light','dark-mobile','light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
   git('add','.');git('commit','-m','fixture');git('remote','add','origin',remote);git('push','-u','origin','main');
@@ -26,10 +28,24 @@ test('local publisher pushes the generated panel without untracked private files
   try {
     await writeFile(join(f.repo,'private-draft.txt'),'untracked work');
     const result=f.run(); assert.equal(result.status,0,result.stderr);
-    assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:README.md'],{encoding:'utf8'}),'refreshed');
+    assert.ok(execFileSync('git',['--git-dir',f.remote,'show','main:README.md'],{encoding:'utf8'}).startsWith('refreshed'));
     assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:assets/profile-symbol-dark.svg'],{encoding:'utf8'}),'new symbol');
     const paths=execFileSync('git',['--git-dir',f.remote,'ls-tree','--name-only','-r','main'],{encoding:'utf8'});
     assert(!paths.includes('private-draft.txt'));
+  }finally{await rm(f.root,{recursive:true,force:true});}
+});
+
+test('published README pins committed images and unchanged refreshes do not create new commits',async()=>{
+  const f=await fixture();
+  try {
+    const first=f.run();assert.equal(first.status,0,first.stderr);
+    const readme=execFileSync('git',['--git-dir',f.remote,'show','main:README.md'],{encoding:'utf8'});
+    const reference=readme.match(/raw\.githubusercontent\.com\/PuebloAguilar\/PuebloAguilar\/([a-f0-9]{40})\/assets\/profile-symbol-dark\.svg/);
+    assert.ok(reference,'README must reference an immutable asset commit');
+    assert.equal(execFileSync('git',['--git-dir',f.remote,'show',`${reference[1]}:assets/profile-symbol-dark.svg`],{encoding:'utf8'}),'new symbol');
+    const before=f.git('rev-parse','HEAD');
+    const second=f.run();assert.equal(second.status,0,second.stderr);
+    assert.equal(f.git('rev-parse','HEAD'),before,'An unchanged source must not keep repinning the README');
   }finally{await rm(f.root,{recursive:true,force:true});}
 });
 

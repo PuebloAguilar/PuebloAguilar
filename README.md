@@ -5,15 +5,12 @@
     <source media="(prefers-color-scheme: dark)" srcset="assets/profile-symbol-dark.svg">
     <img alt="SOCEO symbol in ASCII, 80 columns × 48 rows" src="assets/profile-symbol-light.svg" width="448">
   </picture>
-      <br>
-      <a href="https://www.instagram.com/puebloaguilar/"><strong>PUEBLO AGUILAR</strong></a>
-      <br>
-      <a href="https://www.soceo.ai/"><strong>SOCEO.AI</strong></a>
+      <h3><a href="https://www.instagram.com/puebloaguilar/">PUEBLO AGUILAR</a><br><a href="https://www.soceo.ai/">SOCEO.AI</a></h3>
     </td>
     <td width="63%" valign="middle">
       <picture><source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="assets/profile-metrics-dark-mobile.svg"><source media="(max-width: 680px)" srcset="assets/profile-metrics-light-mobile.svg">
     <source media="(prefers-color-scheme: dark)" srcset="assets/profile-metrics-dark.svg">
-    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 29,697,658,617 AI tokens, 258,236 messages and 4,257 sessions. Last collection: 11 Oct 2026 21:15 BRT." src="assets/profile-metrics-light.svg" width="756">
+    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 29,697,658,617 AI tokens, 258,236 messages and 4,257 sessions. Last collection: 11 Oct 2026 21:41 BRT." src="assets/profile-metrics-light.svg" width="600">
   </picture>
     </td>
   </tr>

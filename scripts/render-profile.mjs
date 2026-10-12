@@ -14,34 +14,47 @@ export function collectionTime(value) {
 export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={}) {
   const theme=dark?{bg:'#161b22',fg:'#c9d1d9',key:'#9c6bff',value:'#a5d6ff',muted:'#758396',accent:'#3fb950'}:{bg:'#f6f8fa',fg:'#24292f',key:'#7839ee',value:'#0550ae',muted:'#6e7781',accent:'#1a7f37'};
   const symbolOnly=part==='symbol',metricsOnly=part==='metrics';
-  const width=symbolOnly?448:metricsOnly?(mobile?560:756):mobile?700:1180;
+  const width=symbolOnly?448:metricsOnly?(mobile?320:600):mobile?700:1050;
   let height=symbolOnly?448:metricsOnly?600:mobile?1140:600;
-  const textX=metricsOnly?26:mobile?26:450;
-  const textY=metricsOnly?38:mobile?580:38;
-  const textWidth=width-textX-28;
-  const fontSize=metricsOnly&&mobile?20:16.5;
+  const textX=metricsOnly?(mobile?16:26):mobile?26:450;
+  const textY=metricsOnly?(mobile?30:38):mobile?580:38;
+  const textWidth=width-textX-(metricsOnly&&mobile?16:28);
+  const fontSize=metricsOnly&&mobile?22:18.5;
   const characterWidth=fontSize*.6;
   const capacity=Math.floor(textWidth/characterWidth);
-  const rowHeight=metricsOnly&&mobile?30:24;
+  const rowHeight=metricsOnly&&mobile?30:26;
   let extraRows=0;
   const text=(x,y,value,fill=theme.fg,size=fontSize)=>`<text x="${x}" y="${y}" fill="${fill}" font-size="${size}">${escapeXml(value)}</text>`;
   const heading=(row,title)=>text(textX,textY+(row+extraRows)*rowHeight,`${title} ${'─'.repeat(Math.max(1,capacity-title.length-1))}`);
   const line=(row,key,value)=>{
-    if(metricsOnly&&mobile&&key.length+value.length+6>capacity){
+    if(key.length+value.length+7>capacity){
       const y=textY+(row+extraRows)*rowHeight;
-      extraRows++;
-      return `<text x="${textX}" y="${y}"><tspan fill="${theme.key}">${escapeXml(key)}</tspan><tspan fill="${theme.fg}">:</tspan></text>${text(textX+12,y+rowHeight,value,theme.value)}`;
+      const wrapped=[];
+      for(const word of value.split(' ')){
+        const last=wrapped.length-1;
+        if(last>=0&&wrapped[last].length+word.length+1<=capacity-2)wrapped[last]+=` ${word}`;
+        else wrapped.push(word);
+      }
+      extraRows+=wrapped.length;
+      return `<text x="${textX}" y="${y}"><tspan fill="${theme.key}">${escapeXml(key)}</tspan><tspan fill="${theme.fg}">:</tspan></text>${wrapped.map((value,index)=>text(textX+12,y+(index+1)*rowHeight,value,theme.value)).join('')}`;
     }
     const dots='.'.repeat(Math.max(2,capacity-key.length-value.length-6));
     return `<text x="${textX}" y="${textY+(row+extraRows)*rowHeight}"><tspan fill="${theme.muted}">. </tspan><tspan fill="${theme.key}">${escapeXml(key)}</tspan><tspan fill="${theme.fg}">:</tspan><tspan fill="${theme.muted}"> ${dots} </tspan><tspan fill="${theme.value}">${escapeXml(value)}</tspan></text>`;
   };
-  const pair=(row,leftKey,leftValue,rightKey,rightValue)=>line(row,leftKey,`${leftValue}  |  ${rightKey}: ${rightValue}`);
+  const pair=(row,leftKey,leftValue,rightKey,rightValue)=>{
+    if(metricsOnly&&mobile){
+      const first=line(row,leftKey,leftValue);
+      extraRows++;
+      return first+line(row,rightKey,rightValue);
+    }
+    return line(row,leftKey,`${leftValue}  |  ${rightKey}: ${rightValue}`);
+  };
   const all=usage.all,week=usage.week;
-  const portraitX=symbolOnly?20:mobile?125:26;
-  const portraitY=symbolOnly?20:mobile?30:105;
-  const portraitSize=symbolOnly?408:mobile?450:408;
+  const portraitX=symbolOnly?8:mobile?125:14;
+  const portraitY=symbolOnly?8:mobile?30:95;
+  const portraitSize=symbolOnly?432:mobile?450:432;
   const center=portraitX+portraitSize/2;
-  const nameY=mobile?523:538;
+  const nameY=mobile?523:562;
   const portrait=[
     dark||symbolOnly?'':`<rect x="${portraitX}" y="${portraitY}" width="${portraitSize}" height="${portraitSize}" fill="#161b22"/>`,
     renderAscii(art,{x:portraitX,y:portraitY,size:portraitSize}),
@@ -72,7 +85,7 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
     line(22,'Collected',collectionTime(usage.updatedAt)),
   ];
   const content=(symbolOnly?portrait:metricsOnly?metrics:[...portrait,...metrics]).join('\n');
-  if(metricsOnly&&mobile)height=textY+(23+extraRows)*rowHeight+24;
+  if(!symbolOnly)height=textY+(22+extraRows)*rowHeight+28;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">\n<title id="title">Pueblo Aguilar — profile and AI usage</title>\n<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: ${all.totalTokens} tokens, ${all.messages} messages, ${all.sessions} sessions. Collected ${escapeXml(collectionTime(usage.updatedAt))}.</desc>\n<rect width="${width}" height="${height}" rx="15" fill="${symbolOnly?'#161b22':theme.bg}"/>\n<g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="${fontSize}" xml:space="preserve">\n${content}\n</g>\n</svg>\n`;
 }
 
@@ -86,13 +99,10 @@ export function renderReadme(usage) {
   <tr>
     <td width="37%" align="center" valign="middle">
       ${picture('symbol','SOCEO symbol in ASCII, 80 columns × 48 rows',448)}
-      <br>
-      <a href="https://www.instagram.com/puebloaguilar/"><strong>PUEBLO AGUILAR</strong></a>
-      <br>
-      <a href="https://www.soceo.ai/"><strong>SOCEO.AI</strong></a>
+      <h3><a href="https://www.instagram.com/puebloaguilar/">PUEBLO AGUILAR</a><br><a href="https://www.soceo.ai/">SOCEO.AI</a></h3>
     </td>
     <td width="63%" valign="middle">
-      ${picture('metrics',`Pueblo Aguilar — Founder & CMO, building SOCEO and Houtines. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`,756,{mobile:true})}
+      ${picture('metrics',`Pueblo Aguilar — Founder & CMO, building SOCEO and Houtines. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`,600,{mobile:true})}
     </td>
   </tr>
 </table>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n`;

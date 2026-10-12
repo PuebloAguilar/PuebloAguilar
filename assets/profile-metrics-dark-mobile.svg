@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="1348" viewBox="0 0 320 1348" role="img" aria-labelledby="title description">
 <title id="title">Pueblo Aguilar — profile and AI usage</title>
-<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29853872910 tokens, 259736 messages, 4265 sessions. Collected 12 Oct 2026 05:15 BRT.</desc>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29853872910 tokens, 259736 messages, 4265 sessions. Collected 12 Oct 2026 06:15 BRT.</desc>
 <rect width="320" height="1348" rx="15" fill="#161b22"/>
 <g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="22" xml:space="preserve">
 <text x="16" y="30" fill="#c9d1d9" font-size="22">pueblo@aguilar ──────</text>
@@ -22,6 +22,6 @@
 <text x="16" y="960"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">4,265</tspan></text><text x="16" y="990"><tspan fill="#9c6bff">Tool calls</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="28" y="1020" fill="#a5d6ff" font-size="22">223,944</text>
 <text x="16" y="1050"><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="28" y="1080" fill="#a5d6ff" font-size="22">259,736</text><text x="16" y="1110"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Active days</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">75</tspan></text>
 <text x="16" y="1140"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">5.68B</tspan></text><text x="16" y="1170"><tspan fill="#9c6bff">Messages.7d</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="28" y="1200" fill="#a5d6ff" font-size="22">53,061</text>
-<text x="16" y="1260"><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="28" y="1290" fill="#a5d6ff" font-size="22">12 Oct 2026 05:15</text><text x="28" y="1320" fill="#a5d6ff" font-size="22">BRT</text>
+<text x="16" y="1260"><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan></text><text x="28" y="1290" fill="#a5d6ff" font-size="22">12 Oct 2026 06:15</text><text x="28" y="1320" fill="#a5d6ff" font-size="22">BRT</text>
 </g>
 </svg>

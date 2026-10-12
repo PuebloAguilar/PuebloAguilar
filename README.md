@@ -10,7 +10,7 @@
     <td width="63%" valign="middle">
       <picture><source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="assets/profile-metrics-dark-mobile.svg"><source media="(max-width: 680px)" srcset="assets/profile-metrics-light-mobile.svg">
     <source media="(prefers-color-scheme: dark)" srcset="assets/profile-metrics-dark.svg">
-    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 29,853,872,910 AI tokens, 259,736 messages and 4,265 sessions. Last collection: 12 Oct 2026 05:15 BRT." src="assets/profile-metrics-light.svg" width="600">
+    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 29,853,872,910 AI tokens, 259,736 messages and 4,265 sessions. Last collection: 12 Oct 2026 06:15 BRT." src="assets/profile-metrics-light.svg" width="600">
   </picture>
     </td>
   </tr>

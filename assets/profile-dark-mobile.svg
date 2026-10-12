@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="1180" viewBox="0 0 700 1180" role="img" aria-labelledby="title description">
 <title id="title">Pueblo Aguilar — profile and AI usage</title>
-<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29853872910 tokens, 259736 messages, 4265 sessions. Collected 12 Oct 2026 01:16 BRT.</desc>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 29853872910 tokens, 259736 messages, 4265 sessions. Collected 12 Oct 2026 02:15 BRT.</desc>
 <rect width="700" height="1180" rx="15" fill="#161b22"/>
 <g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="18.5" xml:space="preserve">
 
@@ -26,6 +26,6 @@
 <text x="26" y="1048"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............... </tspan><tspan fill="#a5d6ff">4,265  |  Tool calls: 223,944</tspan></text>
 <text x="26" y="1074"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ................. </tspan><tspan fill="#a5d6ff">259,736  |  Active days: 75</tspan></text>
 <text x="26" y="1100"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .............. </tspan><tspan fill="#a5d6ff">5.68B  |  Messages.7d: 53,061</tspan></text>
-<text x="26" y="1152"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...................... </tspan><tspan fill="#a5d6ff">12 Oct 2026 01:16 BRT</tspan></text>
+<text x="26" y="1152"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...................... </tspan><tspan fill="#a5d6ff">12 Oct 2026 02:15 BRT</tspan></text>
 </g>
 </svg>

@@ -2,7 +2,9 @@ name: Update AI profile
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    # GitHub Actions supports a minimum schedule of five minutes.
+    # The active macOS publisher runs every 60 seconds instead.
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:

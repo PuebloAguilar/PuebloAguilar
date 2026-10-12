@@ -1,9 +1,11 @@
-# Hourly public profile refresh
+# Public profile refresh every 60 seconds
 
-The active publisher is a dedicated macOS LaunchAgent scheduled at minute 17 of every hour. It runs while the host Mac is awake, using the existing authenticated Git credential. The panel always shows the original public source collection time.
+The active publisher is a dedicated macOS LaunchAgent with `StartInterval=60`. It checks for a newer valid collection every 60 seconds while the host Mac is awake, using the existing authenticated Git credential. It commits generated changes when a newer collection is available; checking more frequently does not make the upstream collector produce data faster. The panel always shows the original public source collection time.
 
 `npm run publish:profile` fetches the newest valid public counters, renders the approved 80×48 color SOCEO symbol, commits only the twelve generated files and pushes `main`. It refuses to start when tracked work is present, locks concurrent runs and only pulls fast-forward changes. Temporary source failures keep the last valid snapshot. No additional credential is stored in the repository.
 
 The LaunchAgent executes `scripts/publish-profile.mjs` with Node 24 or newer. Its stdout/stderr logs and plist belong to the host's local state and LaunchAgents directories, outside the public repository.
 
-`profile.yml` is the equivalent GitHub Actions template with an hourly cron and manual dispatch. It is intentionally outside `.github/workflows/`: the current CLI credential lacks the `workflow` scope, so hosted execution is not active. To migrate later, install that file under `.github/workflows/`, verify a successful hosted run, then unload the local LaunchAgent to avoid duplicate publishing.
+`profile.yml` is a GitHub Actions template with a five-minute cron and manual dispatch. [GitHub Actions supports a minimum scheduled interval of five minutes](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule), so it cannot replace the 60-second local cadence with the same frequency. It is intentionally outside `.github/workflows/`: the current CLI credential lacks the `workflow` scope, so hosted execution is not active. To migrate later, install that file under `.github/workflows/`, verify a successful hosted run, then unload the local LaunchAgent to avoid duplicate publishing.
+
+GitHub profile READMEs are rendered HTML and static images. [GitHub removes script tags during rendering](https://github.com/github/markup#github-markup), and an already-open profile page does not fetch a newly committed SVG every minute. Visitors must reload or revisit the profile to see newer values; image caching can also delay visibility. Continuous updates without a reload require a separate web page with client-side polling or a stream. The README does not claim to be live.

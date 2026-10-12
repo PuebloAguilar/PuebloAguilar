@@ -1,4 +1,5 @@
 import {renderAscii} from './ascii.mjs';
+import {usageAverages} from './usage.mjs';
 
 export function escapeXml(value) {
   return String(value).replace(/[&<>"']/g, character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[character]));
@@ -6,6 +7,7 @@ export function escapeXml(value) {
 
 const number=value=>new Intl.NumberFormat('en-US').format(value);
 const compact=value=>value>=1e9?`${(value/1e9).toFixed(2)}B`:value>=1e6?`${(value/1e6).toFixed(2)}M`:number(value);
+const average=(value,format=compact)=>value===null?'—':format(Math.round(value));
 
 export function collectionTime(value) {
   return `${new Intl.DateTimeFormat('en-GB',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(value)).replace(',','')} BRT`;
@@ -50,6 +52,7 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
     return line(row,leftKey,`${leftValue}  |  ${rightKey}: ${rightValue}`);
   };
   const all=usage.all,week=usage.week;
+  const averages=usageAverages(usage);
   const portraitX=symbolOnly?8:mobile?125:14;
   const portraitY=symbolOnly?8:mobile?30:95;
   const portraitSize=symbolOnly?432:mobile?450:432;
@@ -65,23 +68,24 @@ export function renderProfile(usage, art, {dark=true,mobile=false,part='full'}={
   ];
   const metrics=[
     heading(0,'pueblo@aguilar'),
-    line(1,'OS','macOS'),
-    line(2,'Role','Founder & CMO'),
-    line(3,'Building','SOCEO, Houtines'),
-    line(4,'Focus','AI agents, autonomous systems'),
-    line(5,'Stack','TypeScript, Python, React'),
-    line(7,'Agents','Codex, Claude Code, Hermes'),
-    heading(9,'- Contact'),
-    line(10,'Website','puebloaguilar.com'),
-    line(11,'Instagram','@puebloaguilar'),
-    line(12,'LinkedIn','/in/opueblo'),
-    heading(14,'- AI Usage'),
-    line(15,'Tokens.All',compact(all.totalTokens)),
-    pair(16,'Input',compact(all.inputTokens),'Output',compact(all.outputTokens)),
-    line(17,'Cache',compact(all.cacheReadTokens+all.cacheCreationTokens)),
-    pair(18,'Sessions',number(all.sessions),'Tool calls',number(all.toolCalls)),
-    pair(19,'Messages',number(all.messages),'Active days',number(all.activeDays)),
-    pair(20,'Tokens.7d',compact(week.totalTokens),'Messages.7d',number(week.messages)),
+    line(1,'Role','Founder & CMO'),
+    line(2,'Building','SOCEO, Houtines'),
+    line(3,'Focus','AI agents, autonomous systems'),
+    heading(5,'- Contact'),
+    line(6,'Website','puebloaguilar.com'),
+    line(7,'Instagram','@puebloaguilar'),
+    line(8,'LinkedIn','/in/opueblo'),
+    heading(10,'- AI Usage'),
+    line(11,'Tokens.All',compact(all.totalTokens)),
+    pair(12,'Input',compact(all.inputTokens),'Output',compact(all.outputTokens)),
+    line(13,'Cache.Read',compact(all.cacheReadTokens)),
+    line(14,'Cache.Write',compact(all.cacheCreationTokens)),
+    pair(15,'Sessions',number(all.sessions),'Tool calls',number(all.toolCalls)),
+    pair(16,'Messages',number(all.messages),'Active days',number(all.activeDays)),
+    pair(17,'Tokens/Day',average(averages.tokensPerActiveDay),'Messages/Day',average(averages.messagesPerActiveDay,number)),
+    pair(18,'Tokens.7d',compact(week.totalTokens),'Messages.7d',number(week.messages)),
+    pair(19,'Sessions.7d',number(week.sessions),'Tools.7d',number(week.toolCalls)),
+    line(20,'Tokens/Session',average(averages.tokensPerSession)),
     line(22,'Collected',collectionTime(usage.updatedAt)),
   ];
   const content=(symbolOnly?portrait:metricsOnly?metrics:[...portrait,...metrics]).join('\n');

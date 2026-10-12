@@ -1,6 +1,6 @@
 # Pueblo Aguilar GitHub profile
 
-Publish the terminal profile in the public profile repository `PuebloAguilar/PuebloAguilar`. The user selected the layout inspired by Andrew6rant and approved automatic hourly updates using existing public AI metrics.
+Publish the terminal profile in the public profile repository `PuebloAguilar/PuebloAguilar`. The user selected the layout inspired by Andrew6rant and initially approved hourly updates using existing public AI metrics. On 2026-10-12 the user requested a 60-second refresh and more AI usage fields in place of OS, Stack and Agents.
 
 ## Approved visual
 
@@ -16,12 +16,16 @@ Fetch only `https://www.puebloaguilar.com/api/ai-usage` and `https://soceo.ai/da
 
 Display tokens, input/output/cache tokens, messages, distinct sessions, tool calls and active days. Tokens include recorded cache usage; activity includes recorded subagents. Omit monetary cost estimates. Show the original source timestamp in America/Sao_Paulo and the recorded lifetime date range. No local prompts, session records, file paths or credentials are collected.
 
+Omit the OS, Stack and Agents fields. Reuse their space for separate Cache.Read and Cache.Write totals, Sessions.7d, Tools.7d, Tokens/Day, Messages/Day and Tokens/Session. The daily averages divide the lifetime totals by recorded activeDays, not calendar days since the start date. Tokens/Session uses the lifetime distinct-session count. Calculate from the existing validated allowlist; no additional feed fields or private records are collected. Round displayed averages, keep the original counters unchanged, and show an em dash when a denominator is zero. Desktop typography and the 22-row baseline layout remain unchanged; narrow variants wrap values and split pairs as before.
+
 ## Automation and dependencies
 
-The current GitHub CLI credential permits repository writes but lacks the workflow scope. The working publication path is a macOS LaunchAgent at minute 17 of every hour using the existing authenticated Git credential. It runs while the Mac is awake, refuses to overwrite tracked work, uses an exclusive process lock, pulls with --ff-only, and commits only the generated README, ten SVGs and public counter summary. The original collection time remains visible. A GitHub Actions template supporting hourly schedule and manual dispatch is preserved at automation/profile.yml for a future move to hosted execution; it is not enabled.
+The current GitHub CLI credential permits repository writes but lacks the workflow scope. The working publication path is a macOS LaunchAgent with StartInterval=60 using the existing authenticated Git credential. It runs while the Mac is awake, refuses to overwrite tracked work, uses an exclusive process lock, pulls with --ff-only, and commits only the generated README, ten SVGs and public counter summary when generated content changes. The original collection time remains visible; polling every minute does not increase the source collector's frequency. A GitHub Actions template supporting a five-minute schedule and manual dispatch is preserved at automation/profile.yml for a future move to hosted execution; it is not enabled and cannot match the local 60-second interval.
+
+An already-open GitHub profile does not update its embedded SVG without a reload. GitHub sanitizes README scripts and caches rendered images, so the publication cadence is separate from what a visitor sees. Live updates without reloading require a separate web page; this change does not add JavaScript, iframe tricks or simulated live numbers to the README.
 
 Use npm sharp for image decoding and ASCII sampling. Pin consultation submodules under `.references/`; keep them outside the build. The small custom renderer is justified by the existing public aggregate schema and exact selected visual. The Andrew6rant repository is a visual reference without a declared source license, so its source or SVGs are not copied.
 
 ## Verification
 
-Before publication: counter validation and failure-fallback tests, exact comparison against the approved 80×48 symbol, SVG XML parsing, square character geometry, dark/light and narrow-screen visual inspection, and staged-path review. After publication: confirm the profile README and raw SVGs load publicly, verify the two uppercase links have separate destinations in the GitHub-rendered HTML, then observe the registered LaunchAgent run successfully, verify its refreshed commit on GitHub, and confirm that the minute-17 hourly schedule is loaded. Configuration alone does not prove execution.
+Before publication: counter validation and failure-fallback tests, active-day/session average and zero-denominator tests, exact comparison against the approved 80×48 symbol, SVG XML parsing, square character geometry, dark/light and narrow-screen visual inspection, and staged-path review. After publication: confirm the profile README and raw SVGs load publicly, verify the two uppercase links have separate destinations in the GitHub-rendered HTML, then observe the registered LaunchAgent run successfully, verify its refreshed commit on GitHub, and confirm that the 60-second interval is loaded. Observe another automatic run to establish that the interval actually fires. Configuration alone does not prove execution.

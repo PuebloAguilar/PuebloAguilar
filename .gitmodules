@@ -4,3 +4,6 @@
 [submodule ".references/andrew6rant"]
 	path = .references/andrew6rant
 	url = https://github.com/Andrew6rant/Andrew6rant.git
+[submodule ".references/node-cron"]
+	path = .references/node-cron
+	url = https://github.com/node-cron/node-cron.git

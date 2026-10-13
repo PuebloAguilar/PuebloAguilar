@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
   "owner": "puebloaguilar",
-  "updatedAt": "2026-10-13T23:03:32.127Z",
+  "updatedAt": "2026-10-13T23:04:35.889Z",
   "all": {
     "startDate": "2026-03-08",
     "endDate": "2026-10-13",
-    "inputTokens": 678912696,
-    "outputTokens": 118215381,
+    "inputTokens": 679046302,
+    "outputTokens": 118225320,
     "cacheCreationTokens": 131888749,
-    "cacheReadTokens": 30185296360,
-    "totalTokens": 31114313186,
+    "cacheReadTokens": 30187470952,
+    "totalTokens": 31116631323,
     "activeDays": 77,
-    "messages": 270821,
-    "sessions": 4395,
-    "toolCalls": 233354
+    "messages": 270859,
+    "sessions": 4398,
+    "toolCalls": 233388
   },
   "week": {
     "startDate": "2026-10-07",
     "endDate": "2026-10-13",
-    "inputTokens": 171887340,
-    "outputTokens": 32338836,
+    "inputTokens": 172020946,
+    "outputTokens": 32348775,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 5375928064,
-    "totalTokens": 5580154240,
+    "cacheReadTokens": 5378102656,
+    "totalTokens": 5582472377,
     "activeDays": 7,
-    "messages": 52368,
-    "sessions": 526,
-    "toolCalls": 44056
+    "messages": 52406,
+    "sessions": 529,
+    "toolCalls": 44090
   }
 }

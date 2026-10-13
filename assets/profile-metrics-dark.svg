@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="638" viewBox="0 0 600 638" role="img" aria-labelledby="title description">
 <title id="title">Pueblo Aguilar — profile and AI usage</title>
-<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 30788514707 tokens, 268485 messages, 4368 sessions. Collected 13 Oct 2026 14:13 BRT.</desc>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 30789168660 tokens, 268489 messages, 4368 sessions. Collected 13 Oct 2026 14:14 BRT.</desc>
 <rect width="600" height="638" rx="15" fill="#161b22"/>
 <g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="18.5" xml:space="preserve">
 <text x="26" y="38" fill="#c9d1d9" font-size="18.5">pueblo@aguilar ──────────────────────────────────</text>
@@ -14,15 +14,15 @@
 <text x="26" y="246"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................ </tspan><tspan fill="#a5d6ff">/in/opueblo</tspan></text>
 <text x="26" y="298" fill="#c9d1d9" font-size="18.5">- AI Usage ──────────────────────────────────────</text>
 <text x="26" y="324"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.All</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................... </tspan><tspan fill="#a5d6ff">30.79B</tspan></text>
-<text x="26" y="350"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Input</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........... </tspan><tspan fill="#a5d6ff">670.24M  |  Output: 116.87M</tspan></text>
+<text x="26" y="350"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Input</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........... </tspan><tspan fill="#a5d6ff">670.25M  |  Output: 116.88M</tspan></text>
 <text x="26" y="376"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Cache.Read</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................... </tspan><tspan fill="#a5d6ff">29.87B</tspan></text>
 <text x="26" y="402"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Cache.Write</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ......................... </tspan><tspan fill="#a5d6ff">131.89M</tspan></text>
-<text x="26" y="428"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...... </tspan><tspan fill="#a5d6ff">4,368  |  Tool calls: 231,372</tspan></text>
-<text x="26" y="454"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........ </tspan><tspan fill="#a5d6ff">268,485  |  Active days: 77</tspan></text>
-<text x="26" y="480"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens/Day</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">399.85M  |  Messages/Day: 3,487</tspan></text>
-<text x="26" y="506"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ..... </tspan><tspan fill="#a5d6ff">5.25B  |  Messages.7d: 50,032</tspan></text>
-<text x="26" y="532"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........ </tspan><tspan fill="#a5d6ff">499  |  Tools.7d: 42,074</tspan></text>
+<text x="26" y="428"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ...... </tspan><tspan fill="#a5d6ff">4,368  |  Tool calls: 231,376</tspan></text>
+<text x="26" y="454"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Messages</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........ </tspan><tspan fill="#a5d6ff">268,489  |  Active days: 77</tspan></text>
+<text x="26" y="480"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens/Day</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> .. </tspan><tspan fill="#a5d6ff">399.86M  |  Messages/Day: 3,487</tspan></text>
+<text x="26" y="506"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ..... </tspan><tspan fill="#a5d6ff">5.26B  |  Messages.7d: 50,036</tspan></text>
+<text x="26" y="532"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Sessions.7d</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........ </tspan><tspan fill="#a5d6ff">499  |  Tools.7d: 42,078</tspan></text>
 <text x="26" y="558"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Tokens/Session</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ........................ </tspan><tspan fill="#a5d6ff">7.05M</tspan></text>
-<text x="26" y="610"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............. </tspan><tspan fill="#a5d6ff">13 Oct 2026 14:13 BRT</tspan></text>
+<text x="26" y="610"><tspan fill="#758396">. </tspan><tspan fill="#9c6bff">Collected</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#758396"> ............. </tspan><tspan fill="#a5d6ff">13 Oct 2026 14:14 BRT</tspan></text>
 </g>
 </svg>

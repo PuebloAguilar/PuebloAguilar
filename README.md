@@ -2,15 +2,15 @@
   <tr>
     <td width="37%" align="center" valign="middle">
       <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-symbol-dark.svg">
-    <img alt="SOCEO symbol in ASCII, 80 columns × 48 rows" src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-symbol-light.svg" width="448">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-symbol-dark.svg">
+    <img alt="SOCEO symbol in ASCII, 80 columns × 48 rows" src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-symbol-light.svg" width="448">
   </picture>
       <h3><a href="https://www.instagram.com/puebloaguilar/">PUEBLO AGUILAR</a><br><a href="https://www.soceo.ai/">SOCEO.AI</a></h3>
     </td>
     <td width="63%" valign="middle">
-      <picture><source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-metrics-dark-mobile.svg"><source media="(max-width: 680px)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-metrics-light-mobile.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-metrics-dark.svg">
-    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 30,686,847,819 AI tokens, 267,734 messages and 4,363 sessions. Last collection: 13 Oct 2026 12:53 BRT." src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/dfe54958c831aca6d2fb7f5bd25a2a91bce64d0d/assets/profile-metrics-light.svg" width="600">
+      <picture><source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-metrics-dark-mobile.svg"><source media="(max-width: 680px)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-metrics-light-mobile.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-metrics-dark.svg">
+    <img alt="Pueblo Aguilar — Founder &amp; CMO, building SOCEO and Houtines. 30,686,847,819 AI tokens, 267,734 messages and 4,363 sessions. Last collection: 13 Oct 2026 12:54 BRT." src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/c23240c6bb9030011daa526620aba7f94d06e916/assets/profile-metrics-light.svg" width="600">
   </picture>
     </td>
   </tr>

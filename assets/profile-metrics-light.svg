@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="638" viewBox="0 0 600 638" role="img" aria-labelledby="title description">
 <title id="title">Pueblo Aguilar — profile and AI usage</title>
-<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 30686847819 tokens, 267734 messages, 4363 sessions. Collected 13 Oct 2026 13:50 BRT.</desc>
+<desc id="description">ASCII rendering of the SOCEO symbol for Pueblo Aguilar, Founder and CMO. Lifetime AI usage: 30686847819 tokens, 267734 messages, 4363 sessions. Collected 13 Oct 2026 13:51 BRT.</desc>
 <rect width="600" height="638" rx="15" fill="#f6f8fa"/>
 <g font-family="Menlo,Consolas,DejaVu Sans Mono,monospace" font-weight="600" font-size="18.5" xml:space="preserve">
 <text x="26" y="38" fill="#24292f" font-size="18.5">pueblo@aguilar ──────────────────────────────────</text>
@@ -23,6 +23,6 @@
 <text x="26" y="506"><tspan fill="#6e7781">. </tspan><tspan fill="#7839ee">Tokens.7d</tspan><tspan fill="#24292f">:</tspan><tspan fill="#6e7781"> ..... </tspan><tspan fill="#0550ae">5.15B  |  Messages.7d: 49,281</tspan></text>
 <text x="26" y="532"><tspan fill="#6e7781">. </tspan><tspan fill="#7839ee">Sessions.7d</tspan><tspan fill="#24292f">:</tspan><tspan fill="#6e7781"> ........ </tspan><tspan fill="#0550ae">494  |  Tools.7d: 41,424</tspan></text>
 <text x="26" y="558"><tspan fill="#6e7781">. </tspan><tspan fill="#7839ee">Tokens/Session</tspan><tspan fill="#24292f">:</tspan><tspan fill="#6e7781"> ........................ </tspan><tspan fill="#0550ae">7.03M</tspan></text>
-<text x="26" y="610"><tspan fill="#6e7781">. </tspan><tspan fill="#7839ee">Collected</tspan><tspan fill="#24292f">:</tspan><tspan fill="#6e7781"> ............. </tspan><tspan fill="#0550ae">13 Oct 2026 13:50 BRT</tspan></text>
+<text x="26" y="610"><tspan fill="#6e7781">. </tspan><tspan fill="#7839ee">Collected</tspan><tspan fill="#24292f">:</tspan><tspan fill="#6e7781"> ............. </tspan><tspan fill="#0550ae">13 Oct 2026 13:51 BRT</tspan></text>
 </g>
 </svg>

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "puebloaguilar",
-  "updatedAt": "2026-10-14T14:49:42.376Z",
+  "updatedAt": "2026-10-14T14:50:49.972Z",
   "all": {
     "startDate": "2026-03-08",
     "endDate": "2026-10-14",
@@ -11,9 +11,9 @@
     "cacheReadTokens": 30744004328,
     "totalTokens": 31696058071,
     "activeDays": 78,
-    "messages": 275786,
-    "sessions": 4457,
-    "toolCalls": 237685
+    "messages": 276240,
+    "sessions": 4465,
+    "toolCalls": 238047
   },
   "week": {
     "startDate": "2026-10-08",
@@ -24,8 +24,8 @@
     "cacheReadTokens": 4821719296,
     "totalTokens": 5005368486,
     "activeDays": 7,
-    "messages": 46333,
-    "sessions": 401,
-    "toolCalls": 38872
+    "messages": 46787,
+    "sessions": 409,
+    "toolCalls": 39234
   }
 }

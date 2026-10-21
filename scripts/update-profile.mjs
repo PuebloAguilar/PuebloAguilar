@@ -18,7 +18,8 @@ const art=await createAscii(source,{columns:80,kind:'color'});
 await mkdir('data',{recursive:true});
 for(const dark of [true,false])for(const mobile of [false,true]){
   const name=`assets/profile-${dark?'dark':'light'}${mobile?'-mobile':''}.svg`;
-  await writeFile(name,renderProfile(usage,art,{dark,mobile}));
+  await writeFile(name,renderProfile(usage,art,{dark,mobile,section:'identity'}));
+  await writeFile(`assets/profile-company-${dark?'dark':'light'}${mobile?'-mobile':''}.svg`,renderProfile(usage,art,{dark,mobile,section:'company'}));
 }
 for(const dark of [true,false])for(const part of ['symbol','metrics']){
   const name=`assets/profile-${part}-${dark?'dark':'light'}.svg`;

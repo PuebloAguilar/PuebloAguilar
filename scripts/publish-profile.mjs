@@ -7,7 +7,7 @@ const repository=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const environment={...process.env,GIT_TERMINAL_PROMPT:'0'};
 const run=(command,args)=>execFileSync(command,args,{cwd:repository,env:environment,encoding:'utf8',timeout:120000,stdio:['ignore','pipe','pipe']});
 const git=(...args)=>run('git',args).trim();
-const generated=['data/usage.json',...['dark','light','dark-mobile','light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'].map(theme=>`assets/profile-${theme}.svg`)];
+const generated=['data/usage.json',...['dark','light','dark-mobile','light-mobile','company-dark','company-light','company-dark-mobile','company-light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'].map(theme=>`assets/profile-${theme}.svg`)];
 const lockPath=resolve(repository,git('rev-parse','--git-path','profile-publish.lock'));
 
 async function acquire() {

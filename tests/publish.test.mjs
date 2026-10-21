@@ -16,9 +16,9 @@ async function fixture() {
   await copyFile(new URL('../scripts/publish-profile.mjs',import.meta.url),join(repo,'scripts/publish-profile.mjs'));
   await writeFile(join(repo,'scripts/update-profile.mjs'),`import{writeFileSync}from'node:fs';
 if(process.argv[2]==='--pin-readme')writeFileSync('README.md','refreshed\\n<img src="https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/'+process.argv[3]+'/assets/profile-symbol-dark.svg">');
-else{if(!process.argv.includes('--no-readme'))writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');writeFileSync('assets/profile-symbol-dark.svg','new symbol');}`);
+else{if(!process.argv.includes('--no-readme'))writeFileSync('README.md','refreshed');writeFileSync('data/usage.json','{}');writeFileSync('assets/profile-symbol-dark.svg','new symbol');writeFileSync('assets/profile-company-dark.svg','linked company section');}`);
   await writeFile(join(repo,'README.md'),'original'); await writeFile(join(repo,'data/usage.json'),'{}');
-  for(const name of ['dark','light','dark-mobile','light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
+  for(const name of ['dark','light','dark-mobile','light-mobile','company-dark','company-light','company-dark-mobile','company-light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
   git('add','.');git('commit','-m','fixture');git('remote','add','origin',remote);git('push','-u','origin','main');
   return {root,repo,remote,git,run:(extraEnv={})=>spawnSync(process.execPath,['scripts/publish-profile.mjs'],{cwd:repo,encoding:'utf8',env:{...process.env,...extraEnv}})};
 }
@@ -30,6 +30,7 @@ test('local publisher pushes the generated panel without untracked private files
     const result=f.run(); assert.equal(result.status,0,result.stderr);
     assert.ok(execFileSync('git',['--git-dir',f.remote,'show','main:README.md'],{encoding:'utf8'}).startsWith('refreshed'));
     assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:assets/profile-symbol-dark.svg'],{encoding:'utf8'}),'new symbol');
+    assert.equal(execFileSync('git',['--git-dir',f.remote,'show','main:assets/profile-company-dark.svg'],{encoding:'utf8'}),'linked company section');
     const paths=execFileSync('git',['--git-dir',f.remote,'ls-tree','--name-only','-r','main'],{encoding:'utf8'});
     assert(!paths.includes('private-draft.txt'));
   }finally{await rm(f.root,{recursive:true,force:true});}

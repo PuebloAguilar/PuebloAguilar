@@ -6,7 +6,7 @@ The active LaunchAgent is `com.pueblo.profile.ai-usage`, with `StartCalendarInte
 
 The publisher operates in `/Users/pueblo/.local/state/weekly-ai-metrics/github-profile`, a clean operational clone. The existing developer checkout, including its uncommitted generated images/data and output folder, is preserved. The publisher retains its clean-work guard and concurrency lock, fast-forward pull and generated-file allowlist.
 
-`npm run publish:profile` commits ten SVGs and the public counter summary first, then writes/commits the README with image URLs pinned to that immutable asset commit. Both commits are pushed together. README updates include the collection date and all displayed values; they are part of the weekly job. An invalid supplied shared snapshot fails closed. Manual calls without `AI_USAGE_SOURCE_FILE` retain the existing public-endpoint fallback behavior.
+`npm run publish:profile` commits fourteen SVGs and the public counter summary first, then writes/commits the README with image URLs pinned to that immutable asset commit. Both commits are pushed together. The four company-section variants preserve the independent SOCEO.AI link immediately below PUEBLO AGUILAR while keeping the black panel continuous. README updates include the collection date and all displayed values; they are part of the weekly job. An invalid supplied shared snapshot fails closed. Manual calls without `AI_USAGE_SOURCE_FILE` retain the existing public-endpoint fallback behavior.
 
 `profile.yml` remains an inactive GitHub Actions template outside `.github/workflows/`, updated to Tuesday12:00UTC. Enabling it would require removing the local duplicate publisher and arranging the shared source; it is not enabled by this change.
 

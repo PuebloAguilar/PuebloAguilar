@@ -100,9 +100,10 @@ export function renderReadme(usage,{assetBase='assets/'}={}) {
   const all=usage.all;
   const picture=(alt,{company=false}={})=>`<picture><source media="(prefers-color-scheme: dark) and (max-width: 680px)" srcset="${assetBase}profile-${company?'company-':''}dark-mobile.svg"><source media="(max-width: 680px)" srcset="${assetBase}profile-${company?'company-':''}light-mobile.svg">
     <source media="(prefers-color-scheme: dark)" srcset="${assetBase}profile-${company?'company-':''}dark.svg">
-    <img alt="${escapeXml(alt)}" src="${assetBase}profile-${company?'company-':''}light.svg" width="1050" align="left">
+    <img alt="${escapeXml(alt)}" src="${assetBase}profile-${company?'company-':''}light.svg" width="1050" align="top">
   </picture>`;
-  return `<p align="center">
+  const readme=`<p align="center">
   <a href="https://www.puebloaguilar.com/">${picture(`Pueblo Aguilar — website and AI dashboard. Founder & CMO, building SOCEO and Houtines. SOCEO symbol in ASCII, 80 columns × 48 rows. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`)}</a><a href="https://soceo.ai/">${picture('SOCEO.AI — open the SOCEO website',{company:true})}</a><br clear="all">
 </p>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n`;
+  return readme.replace(/>\s+</g,'><').trimEnd()+'\n';
 }

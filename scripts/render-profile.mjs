@@ -102,8 +102,8 @@ export function renderReadme(usage,{assetBase='assets/'}={}) {
     <source media="(prefers-color-scheme: dark)" srcset="${assetBase}profile-${company?'company-':''}dark.svg">
     <img alt="${escapeXml(alt)}" src="${assetBase}profile-${company?'company-':''}light.svg" width="1050" align="top">
   </picture>`;
-  const readme=`<p align="center">
-  <a href="https://www.puebloaguilar.com/">${picture(`Pueblo Aguilar — website and AI dashboard. Founder & CMO, building SOCEO and Houtines. SOCEO symbol in ASCII, 80 columns × 48 rows. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`)}</a><a href="https://soceo.ai/">${picture('SOCEO.AI — open the SOCEO website',{company:true})}</a><br clear="all">
-</p>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n`;
+  const readme=`<div align="center"><div>
+  <a href="https://www.puebloaguilar.com/">${picture(`Pueblo Aguilar — website and AI dashboard. Founder & CMO, building SOCEO and Houtines. SOCEO symbol in ASCII, 80 columns × 48 rows. ${number(all.totalTokens)} AI tokens, ${number(all.messages)} messages and ${number(all.sessions)} sessions. Last collection: ${collectionTime(usage.updatedAt)}.`)}</a></div><div><a href="https://soceo.ai/">${picture('SOCEO.AI — open the SOCEO website',{company:true})}</a>
+</div></div>\n\n<p align="center">\n  <a href="https://soceo.ai/">SOCEO</a> ·\n  <a href="https://houtines.com/">Houtines</a> ·\n  <a href="https://www.puebloaguilar.com/">Website & AI dashboard</a> ·\n  <a href="https://instagram.com/puebloaguilar">Instagram</a> ·\n  <a href="https://linkedin.com/in/opueblo">LinkedIn</a>\n</p>\n`;
   return readme.replace(/>\s+</g,'><').trimEnd()+'\n';
 }

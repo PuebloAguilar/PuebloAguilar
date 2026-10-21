@@ -20,7 +20,7 @@ else{if(!process.argv.includes('--no-readme'))writeFileSync('README.md','refresh
   await writeFile(join(repo,'README.md'),'original'); await writeFile(join(repo,'data/usage.json'),'{}');
   for(const name of ['dark','light','dark-mobile','light-mobile','symbol-dark','symbol-light','metrics-dark','metrics-light','metrics-dark-mobile','metrics-light-mobile'])await writeFile(join(repo,`assets/profile-${name}.svg`),'<svg/>');
   git('add','.');git('commit','-m','fixture');git('remote','add','origin',remote);git('push','-u','origin','main');
-  return {root,repo,remote,git,run:()=>spawnSync(process.execPath,['scripts/publish-profile.mjs'],{cwd:repo,encoding:'utf8'})};
+  return {root,repo,remote,git,run:(extraEnv={})=>spawnSync(process.execPath,['scripts/publish-profile.mjs'],{cwd:repo,encoding:'utf8',env:{...process.env,...extraEnv}})};
 }
 
 test('local publisher pushes the generated panel without untracked private files',async()=>{
@@ -56,6 +56,17 @@ test('local publisher refuses to overwrite existing tracked work',async()=>{
     const before=f.git('rev-parse','HEAD');
     const result=f.run(); assert.notEqual(result.status,0);
     assert.equal(await readFile(join(f.repo,'README.md'),'utf8'),'user work');
+    assert.equal(f.git('rev-parse','HEAD'),before);
+  }finally{await rm(f.root,{recursive:true,force:true});}
+});
+
+test('weekly shared publication fails visibly when another publisher holds the lock',async()=>{
+  const f=await fixture();
+  try {
+    await writeFile(join(f.repo,'.git/profile-publish.lock'),String(process.pid));
+    const before=f.git('rev-parse','HEAD');
+    const result=f.run({AI_USAGE_SOURCE_FILE:join(f.root,'shared.json')});
+    assert.notEqual(result.status,0,'The weekly coordinator must not mistake a skipped run for publication');
     assert.equal(f.git('rev-parse','HEAD'),before);
   }finally{await rm(f.root,{recursive:true,force:true});}
 });

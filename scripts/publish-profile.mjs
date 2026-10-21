@@ -24,7 +24,10 @@ async function acquire() {
 }
 
 const lock=await acquire();
-if(!lock){console.log('Another profile publisher is running; skipping this refresh.');}
+if(!lock){
+  if(process.env.AI_USAGE_SOURCE_FILE)throw new Error('Another profile publisher is running; weekly publication was not completed');
+  console.log('Another profile publisher is running; skipping this refresh.');
+}
 else {
   try {
     await lock.writeFile(String(process.pid));

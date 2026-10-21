@@ -11,7 +11,8 @@ if(process.argv[2]==='--pin-readme'){
   if(!/^[a-f0-9]{40}$/.test(commit??''))throw new Error('Expected an immutable asset commit');
   await writeFile('README.md',renderReadme(selectSnapshot([],cached),{assetBase:`https://raw.githubusercontent.com/PuebloAguilar/PuebloAguilar/${commit}/assets/`}));
 }else{
-const usage=await loadSnapshot({urls,cached});
+const snapshot=process.env.AI_USAGE_SOURCE_FILE?JSON.parse(await readFile(process.env.AI_USAGE_SOURCE_FILE,'utf8')):undefined;
+const usage=await loadSnapshot({urls,cached,snapshot});
 const source=await readFile('assets/soceo-symbol.png');
 const art=await createAscii(source,{columns:80,kind:'color'});
 await mkdir('data',{recursive:true});

@@ -48,7 +48,12 @@ export function selectSnapshot(candidates, cached) {
   return valid.sort((a,b)=>Date.parse(b.updatedAt)-Date.parse(a.updatedAt))[0];
 }
 
-export async function loadSnapshot({urls,cached,fetchImpl=fetch}) {
+export async function loadSnapshot({urls,cached,snapshot,fetchImpl=fetch}) {
+  if(snapshot!==undefined){
+    const supplied=summarize(snapshot);
+    if(cached&&Date.parse(selectSnapshot([supplied],cached).updatedAt)>Date.parse(supplied.updatedAt))throw new Error('Weekly collection would regress the public profile');
+    return supplied;
+  }
   const results=await Promise.allSettled(urls.map(async url=>{
     const response=await fetchImpl(url,{signal:AbortSignal.timeout(15000),headers:{Accept:'application/json'}});
     if (!response.ok) throw new Error('Public feed unavailable');

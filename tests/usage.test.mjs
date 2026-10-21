@@ -45,3 +45,13 @@ test('temporary upstream failures retain cached counters and source timestamp', 
   assert.deepEqual(result,cached);
   await assert.rejects(loadSnapshot({urls:['failed'],fetchImpl:async()=>{throw new Error('offline');}}));
 });
+
+test('weekly publisher uses the supplied shared snapshot without fetching another collection', async () => {
+  const snapshot=feed();
+  const result=await loadSnapshot({snapshot,urls:[],fetchImpl:async()=>{throw new Error('must not fetch');}});
+  assert.deepEqual(result,summarize(snapshot));
+});
+
+test('invalid supplied weekly snapshot fails closed rather than using stale cached data', async () => {
+  await assert.rejects(loadSnapshot({snapshot:{owner:'other'},urls:[],cached:summarize(feed())}));
+});
